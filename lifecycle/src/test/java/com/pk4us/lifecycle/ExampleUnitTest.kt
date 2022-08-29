@@ -1,4 +1,4 @@
-package com.pk4us.mvvm
+package com.pk4us.lifecycle
 
 import org.junit.Test
 

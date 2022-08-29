@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MVVM"
-include ':app'
+include ':lifecycle'
