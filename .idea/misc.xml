@@ -6,6 +6,10 @@
         <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/lifecycle/src/main/res/layout/activity_main.xml" value="0.5505208333333333" />
         <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/livedata/src/main/res/layout/activity_main.xml" value="0.482648401826484" />
         <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/livedata/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5375" />
+        <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/navigation/src/main/res/layout/activity_main.xml" value="0.15311909262759923" />
+        <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/navigation/src/main/res/layout/fragment_first.xml" value="0.48935185185185187" />
+        <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/navigation/src/main/res/layout/fragment_second.xml" value="0.48935185185185187" />
+        <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/navigation/src/main/res/layout/fragment_third.xml" value="0.48935185185185187" />
         <entry key="..\:/Eugene/_Programming/AndroidProjects/MVVM/viewmodel/src/main/res/layout/activity_main.xml" value="0.48935185185185187" />
       </map>
     </option>

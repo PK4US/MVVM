@@ -16,3 +16,4 @@ rootProject.name = "MVVM"
 include ':lifecycle'
 include ':livedata'
 include ':viewmodel'
+include ':navigation'
