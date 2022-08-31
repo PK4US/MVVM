@@ -1,0 +1,4 @@
+package com.pk4us.usecase.domain.models
+
+class UserName(val firstName:String,val lastName:String) {
+}
