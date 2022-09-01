@@ -1,9 +1,19 @@
 package com.pk4us.usecase.domain.usecase
 
+import com.pk4us.usecase.data.repository.UserRepositoryImplementation
 import com.pk4us.usecase.domain.models.SaveUserNameParam
+import com.pk4us.usecase.domain.repository.UserRepository
 
-class SaveUserNameUseCase {
+class SaveUserNameUseCase(private val userRepository: UserRepository) {
     fun execute(param: SaveUserNameParam): Boolean {
-        return param.name.isNotEmpty()
+
+        val oldUserName = userRepository.getName()
+
+        if (oldUserName.firstName == param.name){
+            return true
+        }
+
+        val result :Boolean = userRepository.saveName(saveParam = param)
+        return result
     }
 }
