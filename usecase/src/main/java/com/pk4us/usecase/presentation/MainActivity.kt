@@ -2,8 +2,8 @@ package com.pk4us.usecase.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pk4us.usecase.data.repository.UserRepositoryImplementation
-import com.pk4us.usecase.data.storage.sharedprefs.SharedPrefUserStorage
+import com.pk4us.usecode.data.repository.UserRepositoryImplementation
+import com.pk4us.usecode.data.storage.sharedprefs.SharedPrefUserStorage
 import com.pk4us.usecase.databinding.ActivityMainBinding
 import com.pk4us.usecase.domain.models.SaveUserNameParam
 import com.pk4us.usecase.domain.models.UserName

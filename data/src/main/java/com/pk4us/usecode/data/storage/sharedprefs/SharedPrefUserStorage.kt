@@ -1,8 +1,8 @@
-package com.pk4us.usecase.data.storage.sharedprefs
+package com.pk4us.usecode.data.storage.sharedprefs
 
 import android.content.Context
-import com.pk4us.usecase.data.storage.UserStorage
-import com.pk4us.usecase.data.storage.models.User
+import com.pk4us.usecode.data.storage.UserStorage
+import com.pk4us.usecode.data.storage.models.User
 
 private const val SHARED_PREFS_NAME = "shared_prefs_name"
 private const val KEY_FIRST_NAME = "firstName"

@@ -1,7 +1,7 @@
-package com.pk4us.usecase.data.repository
+package com.pk4us.usecode.data.repository
 
-import com.pk4us.usecase.data.storage.models.User
-import com.pk4us.usecase.data.storage.UserStorage
+import com.pk4us.usecode.data.storage.models.User
+import com.pk4us.usecode.data.storage.UserStorage
 import com.pk4us.usecase.domain.models.SaveUserNameParam
 import com.pk4us.usecase.domain.models.UserName
 import com.pk4us.usecase.domain.repository.UserRepository
