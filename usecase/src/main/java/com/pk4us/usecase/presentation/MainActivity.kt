@@ -1,37 +1,33 @@
 package com.pk4us.usecase.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pk4us.usecode.data.repository.UserRepositoryImplementation
-import com.pk4us.usecode.data.storage.sharedprefs.SharedPrefUserStorage
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.pk4us.usecase.databinding.ActivityMainBinding
-import com.pk4us.usecase.domain.models.SaveUserNameParam
-import com.pk4us.usecase.domain.models.UserName
-import com.pk4us.usecase.domain.usecase.GetUserNameUseCase
-import com.pk4us.usecase.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private val userRepository by lazy {UserRepositoryImplementation(userStorage = SharedPrefUserStorage(context = applicationContext))}
-    private val getUserNameUseCase  by lazy(LazyThreadSafetyMode.NONE) { GetUserNameUseCase(userRepository)}
-    private val saveUserNameUseCase  by lazy(LazyThreadSafetyMode.NONE) { SaveUserNameUseCase(userRepository)}
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.e("AAA", "Activity created")
+        viewModel = ViewModelProvider(this, MainViewModelFactory(this))[MainViewModel::class.java]
+
+        viewModel.resultLiveData.observe(this) {
+            binding.dataTextView.text = it
+        }
 
         binding.sendButton.setOnClickListener {
             val text = binding.dataEditText.text.toString()
-            val params = SaveUserNameParam(name = text)
-            val result: Boolean = saveUserNameUseCase.execute(param = params)
-            binding.dataTextView.text = result.toString()
-
+            viewModel.save(text)
         }
 
         binding.receiveButton.setOnClickListener {
-            val userName: UserName = getUserNameUseCase.execute()
-            binding.dataTextView.text = userName.firstName + " " + userName.lastName
+            viewModel.load()
         }
     }
 }

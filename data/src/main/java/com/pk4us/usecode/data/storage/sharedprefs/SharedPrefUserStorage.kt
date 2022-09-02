@@ -10,12 +10,11 @@ private const val KEY_LAST_NAME = "lastName"
 
 class SharedPrefUserStorage(context: Context) : UserStorage {
 
-    private val sharedPreferences =
-        context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+    private val sharedPreferences = context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
 
     override fun save(user: User): Boolean {
         sharedPreferences.edit().putString(KEY_FIRST_NAME, user.firstName).apply()
-        sharedPreferences.edit().putString(KEY_FIRST_NAME, user.lastName).apply()
+        sharedPreferences.edit().putString(KEY_LAST_NAME, user.lastName).apply()
         return true
     }
 
