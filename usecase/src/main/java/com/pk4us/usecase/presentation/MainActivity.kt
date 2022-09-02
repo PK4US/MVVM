@@ -3,6 +3,7 @@ package com.pk4us.usecase.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pk4us.usecase.data.repository.UserRepositoryImplementation
+import com.pk4us.usecase.data.storage.sharedprefs.SharedPrefUserStorage
 import com.pk4us.usecase.databinding.ActivityMainBinding
 import com.pk4us.usecase.domain.models.SaveUserNameParam
 import com.pk4us.usecase.domain.models.UserName
@@ -11,7 +12,7 @@ import com.pk4us.usecase.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private val userRepository by lazy(LazyThreadSafetyMode.NONE) { UserRepositoryImplementation(context = applicationContext) }
+    private val userRepository by lazy {UserRepositoryImplementation(userStorage = SharedPrefUserStorage(context = applicationContext))}
     private val getUserNameUseCase  by lazy(LazyThreadSafetyMode.NONE) { GetUserNameUseCase(userRepository)}
     private val saveUserNameUseCase  by lazy(LazyThreadSafetyMode.NONE) { SaveUserNameUseCase(userRepository)}
 
